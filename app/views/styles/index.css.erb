@@ -1,0 +1,460 @@
+<%= @browser -%>
+
+* {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 13px;
+}
+b, em, h1, i, label, strong {
+  font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
+  font-weight: bold;
+}
+
+/* bar */
+
+div.mui_bar {
+  background-color: <%= color(0.1, 0.1, 0.1) %>;
+  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-position: center center;
+  background-repeat: repeat-x;
+  border-collapse: collapse;
+  color: <%= color(1, 1, 1) %>;
+  width: 100%;
+}
+
+/* block */
+
+*.mui_block {
+  margin: 0.5em;
+}
+span.mui_block {
+  display: inline-block;
+  vertical-align: top;
+}
+div.mui_block_status {
+  background-image: url('/slices/merb-ui/images/transparency.png');
+  border-color: <%= color(0, 0, 0) %>;
+  border-style: solid;
+  border-width: 1px;
+  color: <%= color(0.5, 0.5, 0.5) %>;
+  display: inline-block;
+  padding: 1em;
+  position: absolute;
+  right: 1.5em;
+  top: 0;
+  <%= border_radius %>
+}
+div.mui_block_tray {
+  background-color: <%= color(0.95, 0.95, 0.95) %>;
+  border-bottom-color: <%= color(0.95, 0.95, 0.95) %>;
+  border-left-color: <%= color(0.85, 0.85, 0.85) %>;
+  border-right-color: <%= color(0.85, 0.85, 0.85) %>;
+  border-top-color: <%= color(0.75, 0.75, 0.75) %>;
+  border-style: solid;
+  border-width: 1px;
+  padding: 1em;
+  <%= border_radius %>
+}
+div.mui_block_tray *.mui_block {
+  margin: 0;
+}
+*.mui_block+*.mui_block, div.mui_title+*.mui_block {
+  margin-top: 1em !important;
+}
+
+/* button */
+
+*.mui_button {
+  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-position: center center;
+  background-repeat: repeat-x;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 0.85em;
+  min-height: 1.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  <%= border_radius %>
+}
+*.mui_button_tone_neutral {
+  background-color: <%= color(0.2, 0.2, 0.2) %>;
+  border-bottom-color: <%= color(0, 0, 0) %>;
+  border-left-color: <%= color(0.1, 0.1, 0.1) %>;
+  border-right-color: <%= color(0.1, 0.1, 0.1) %>;
+  border-top-color: <%= color(0.2, 0.2, 0.2) %>;
+  color: <%= color(1, 1, 1) %>;
+}
+*.mui_button_tone_neutral:hover {
+  background-color: <%= color(0.3, 0.3, 0.3) %>;
+  border-bottom-color: <%= color(0.1, 0.1, 0.1) %>;
+  border-left-color: <%= color(0.2, 0.2, 0.2) %>;
+  border-right-color: <%= color(0.2, 0.2, 0.2) %>;
+  border-top-color: <%= color(0.3, 0.3, 0.3) %>;
+  color: <%= color(1, 1, 1) %>;
+}
+*.mui_button_tone_positive {
+  background-color: <%= color(0.1, 0.5, 0.1) %>;
+  border-bottom-color: <%= color(0, 0.3, 0) %>;
+  border-left-color: <%= color(0, 0.4, 0) %>;
+  border-right-color: <%= color(0, 0.4, 0) %>;
+  border-top-color: <%= color(0.1, 0.5, 0.1) %>;
+  color: <%= color(1, 1, 1) %>;
+}
+*.mui_button_tone_positive:hover {
+  background-color: <%= color(0.2, 0.6, 0.2) %>;
+  border-bottom-color: <%= color(0, 0.4, 0) %>;
+  border-left-color: <%= color(0.1, 0.5, 0.1) %>;
+  border-right-color: <%= color(0.1, 0.5, 0.1) %>;
+  border-top-color: <%= color(0.2, 0.6, 0.2) %>;
+  color: <%= color(1, 1, 1) %>;
+}
+*.mui_button_tone_negative {
+  background-color: <%= color(0.6, 0, 0) %>;
+  border-bottom-color: <%= color(0.4, 0, 0) %>;
+  border-left-color: <%= color(0.5, 0, 0) %>;
+  border-right-color: <%= color(0.4, 0, 0) %>;
+  border-top-color: <%= color(0.6, 0, 0) %>;
+  color: <%= color(1, 1, 1) %>;
+}
+*.mui_button_tone_negative:hover {
+  background-color: <%= color(0.7, 0, 0) %>;
+  border-bottom-color: <%= color(0.5, 0, 0) %>;
+  border-left-color: <%= color(0.6, 0, 0) %>;
+  border-right-color: <%= color(0.6, 0, 0) %>;
+  border-top-color: <%= color(0.7, 0, 0) %>;
+  color: <%= color(1, 1, 1) %>;
+}
+button.mui_button {
+  padding: 0.5em;
+  text-align: left;
+}
+button.mui_button img {
+  border-bottom-color: <%= color(0.3, 0.3, 0.3) %>;
+  border-left-color: <%= color(0.3, 0.3, 0.3) %>;
+  border-right-color: <%= color(0.3, 0.3, 0.3) %>;
+  border-top-color: <%= color(0.4, 0.4, 0.4) %>;
+  border-style: solid;
+  border-width: 1px;
+  <%= border_radius %>
+}
+button.mui_button table {
+  border-collapse: collapse;
+}
+button.mui_button td {
+  padding-right: 1em;
+}
+
+/* checkbox */
+
+input.mui_checkbox {
+  vertical-align: middle;
+}
+
+/* code */
+
+code.mui_code {
+  background-color: <%= color(0, 0, 0) %>;
+  border-color: <%= color(0, 0, 0) %>;
+  border-style: solid;
+  border-width: 1px;
+  color: <%= color(1, 1, 1) %>;
+  display: block;
+  font-family: 'Bitstream Vera Sans Mono', 'Monaco', 'Lucida Console' monospace;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  margin-top: 5px;
+}
+code.mui_code var {
+  color: <%= color(0.75, 0.75, 0.75) %>;
+}
+
+/* copyright */
+
+div.mui_copyright {
+  color: <%= color(0.5, 0.5, 0.5) %>;
+  font-size: 0.85em;
+  padding-bottom: 2em;
+  padding-top: 4em;
+  text-align: center;
+}
+
+/* date */
+
+span.mui_date {
+  color: <%= color(0.5, 0.5, 0.5) %>;
+  font-size: 0.85em;
+}
+
+/* desktop */
+
+div.mui_desktop {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 1.5em;
+}
+
+/* divider */
+
+hr.mui_divider {
+  background: <%= color(0.85, 0.85, 0.85) %>;
+  border: none;
+  height: 1px;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-top: 2em;
+}
+div.mui_block_tray hr.mui_divider {
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 1.5em;
+}
+
+/* form */
+
+label {
+  display: block;
+  font-size: 0.85em;
+}
+input.mui_check {
+  margin-right: 0.5em;
+}
+input.mui_password, input.mui_search, input.mui_text, select.mui_menu, textarea.mui_hyper_text {
+  background-color: <%= color(1, 1, 1) %>;
+  border-bottom-color: <%= color(0.75, 0.75, 0.75) %>;
+  border-left-color: <%= color(0.65, 0.65, 0.65) %>;
+  border-right-color: <%= color(0.65, 0.65, 0.65) %>;
+  border-style: solid;
+  border-top-color: <%= color(0.55, 0.55, 0.55) %>;
+  border-width: 1px;
+  color: <%= color(0, 0, 0) %>;
+  display: block;
+  font-size: 0.9em;
+  min-height: 1.5em;
+  margin-top: 0.25em;
+  <%= border_radius(:amount => 0.4) %>
+}
+input.mui_search {
+  margin-right: 0.5em;
+}
+select.date {
+  margin-top: 0.25em;
+}
+select.month, select.day {
+  margin-right: 0.25em;
+}
+select.mui_menu {
+  height: 20em;
+}
+textarea.mui_hyper_text {
+  font-family: 'Bitstream Vera Sans Mono', 'Monaco', 'Lucida Console' monospace;
+  height: 20em;
+  width: 40em;
+}
+
+/* gallery */
+
+div.mui_gallery {
+  background-color: <%= color(0, 0, 0) %>;
+}
+
+/* grid */
+
+table.mui_grid {
+  border-collapse: collapse;
+}
+*.mui_block+table.mui_grid, table.mui_grid+*.mui_block {
+  margin-top: 1em;
+}
+
+/* image */
+
+img.mui_image {
+  background-repeat: no-repeat;
+  display: block;
+}
+img.mui_image_rounded {
+  <%= border_radius %>
+}
+img.mui_image_border {
+  border-color: <%= color(0.5, 0.5, 0.5) %>;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* key */
+
+kbd.mui_key {
+}
+
+/* link */
+
+a.mui_link {
+  color: #0066ff;
+  text-decoration: none;
+}
+a.mui_link:visited {
+  color: #993399;
+}
+a.mui_link:active {
+  color: #3399ff;
+  outline: 0;
+  text-decoration: underline;
+}
+a.mui_link:focus {
+  color: #3399ff;
+  outline: 0;
+}
+a.mui_link:hover {
+  text-decoration: underline;
+}
+
+/* list */
+
+ul.mui_list {
+  list-style-position: inside;
+  margin-left: 0.25em;
+}
+li.mui_list_item {
+  margin-top: 0.25em;
+}
+
+/* menu */
+
+select.mui_menu {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+/* message */
+
+div.mui_message {
+  background-image: url('/slices/merb-ui/images/transparency.png');
+  border-style: solid;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 0;
+  color: <%= color(1, 1, 1) %>;
+  display: none;
+  line-height: 2em;
+  max-width: 60%;
+  min-width: 40%;
+  padding: 1em;
+  white-space: nowrap;
+  <%= border_radius(:edge => 'bottom') %>
+}
+div.mui_message input.mui_button {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+div.mui_message_positive {
+  border-color: <%= color(0, 0.6, 0) %>;
+}
+div.mui_message_negative {
+  border-color: <%= color(0.6, 0, 0) %>;
+}
+div.mui_message_neutral {
+  border-color: <%= color(0, 0, 0) %>;
+}
+
+/* paragraph */
+
+p.mui_paragraph {
+  color: <%= color(0.2, 0.2, 0.2) %>;
+  line-height: 1.5em;
+  max-width: 40em;
+}
+p.mui_paragraph+p.mui_paragraph {
+  margin-top: 1em;
+}
+
+/* quote */
+
+blockquote.mui_quote {
+  background-color: #e5e5e5;
+}
+
+/* tab */
+
+a.mui_tab {
+  background-color: <%= color(0.1, 0.1, 0.1) %>;
+  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-position: center center;
+  background-repeat: repeat-x;
+  border-bottom: none;
+  border-left: none;
+  border-right-color: <%= color(0.1, 0.1, 0.1) %>;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top: none;
+  color: <%= color(1, 1, 1) %>;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+  text-decoration: none;
+}
+a.mui_tab:hover {
+  background-color: <%= color(0.2, 0.2, 0.2) %>;
+}
+a.mui_tab:active, *.mui_button:active, *.mui_selected {
+  background-color: <%= color(0, 0.3, 0.9) %> !important;
+}
+
+/* title */
+
+div.mui_title {
+  color: <%= color(0, 0, 0) %>;
+  font-weight: bold;
+  letter-spacing: -0.1em;
+  line-height: 1em;
+  margin-left: -0.05em;
+}
+
+/* truncate */
+
+i.mui_truncate {
+  color: <%= color(0.5, 0.5, 0.5) %>;
+}
+
+/* window */
+
+table.mui_window {
+  border-collapse: collapse;
+}
+table.mui_window_bar {
+  background-color: <%= color(0.1, 0.1, 0.1) %>;
+  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-position: center center;
+  background-repeat: repeat-x;
+  color: <%= color(1, 1, 1) %>;
+  height: 2em;
+  width: 100%;
+  <%= border_radius(:edge => 'top') %>
+}
+td.mui_window_bar_end {
+  padding-right: 0.75em;
+  text-align: right;
+}
+td.mui_window_title {
+  padding-left: 0.75em;
+}
+td.mui_window_content {
+  background-image: url('/slices/merb-ui/images/transparency.png');
+  color: <%= color(1, 1, 1) %>;
+  padding: 0.5em;
+  <%= border_radius(:edge => 'bottom') %>
+}
+div.mui_window_target {
+  display: none;
+}

@@ -1,0 +1,49 @@
+Merb UI Core
+
+Markup, stylesheets, and javascripts available as helpers.
+
+------------------------------------------------------------------------------
+
+To see all available tasks for MerbUi run:
+
+rake -T slices:merb_ui
+
+------------------------------------------------------------------------------
+
+Instructions for installation:
+
+file: config/dependencies.rb
+
+# add the slice as a regular dependency
+
+dependency 'merb-ui'
+
+# optionally configure the plugins in a before_app_loads callback
+
+Merb::BootLoader.before_app_loads do
+  
+  Merb::Slices::config[:merb_ui][:option] = value
+  
+end
+
+file: config/router.rb
+
+# add the slice
+
+slice(:merb_ui)
+
+# run the following rake task:
+
+rake slices:merb_ui:install
+
+------------------------------------------------------------------------------
+
+You can put your application-level overrides in:
+
+host-app/slices/merb-ui/app - controllers, models, views ...
+
+Templates are located in this order:
+
+1. host-app/slices/merb-ui/app/views/*
+2. gems/merb-ui/app/views/*
+3. host-app/app/views/*
