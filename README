@@ -1,10 +1,10 @@
-Merb UI Core
+Merb UI
 
-Markup, stylesheets, and javascripts available as helpers.
+User interface components for Merb.
 
 ------------------------------------------------------------------------------
 
-To see all available tasks for MerbUi run:
+To see all available tasks for Merb UI run:
 
 rake -T slices:merb_ui
 
