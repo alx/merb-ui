@@ -10,14 +10,14 @@
 	  145:'scroll_lock',
 	  20:'caps_lock',
 	  144:'num_lock',
-	
+
 	  19:'pause',
-	
+
 	  45:'insert',
 	  36:'home',
 	  46:'delete',
 	  35:'end',
-	
+
 	  33:'page_up',
 
 	  34:'page_down',
@@ -67,10 +67,10 @@
       var old = this.data("__keybindings__") || {};
       if(bindings) {
         return this.data("__keybindings__", _.extend(old, bindings));
-      } 
+      }
       return old;
     }
-    
+
     ,keybind: function(binding, fn) {
       var bindings = {}
         ,that = this;
@@ -87,13 +87,13 @@
             ,modKeys = 'shift ctrl alt'.split(/ /)
             ,key
             ,requested_presses
-            ,presses; 
-          
-          if(_.special_keys[e.keyCode]) key = _.special_keys[e.keyCode];        
+            ,presses;
+
+          if(_.special_keys[e.keyCode]) key = _.special_keys[e.keyCode];
           else if(e.keyCode == 188) key=","; //If the user presses , when the type is onkeydown
 			    else if(e.keyCode == 190) key="."; //If the user presses , when the type is onkeydown
-          else if(e.which != 0) key = String.fromCharCode(e.which); 
-          
+          else if(e.which != 0) key = String.fromCharCode(e.which);
+
           for(binding in bindings) {
             presses = 0;
             requested_presses = binding.split('+').length;
@@ -134,6 +134,5 @@
       }
       return this;
     }
-  });  
+  });
 })(jQuery);
-
