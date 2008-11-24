@@ -1,49 +1,75 @@
-Merb UI
+Installation:
 
-User interface components for Merb.
+1.) Install merb-ui gem.
+sudo gem install merb-ui
 
-------------------------------------------------------------------------------
+2.) Navigate to your merb application.
+cd ~/your_merb_app/
 
-To see all available tasks for Merb UI run:
+3.) Copy assets to your merb application.
+rake slices:merb_ui:copy_assets
 
-rake -T slices:merb_ui
-
-------------------------------------------------------------------------------
-
-Instructions for installation:
-
-file: config/dependencies.rb
-
-# add the slice as a regular dependency
+4.) Add to your dependencies file.
+vim config/dependencies.rb
+a
 
 dependency 'merb-ui'
 
-# optionally configure the plugins in a before_app_loads callback
+esc : wq
+
+5.) Add options to your init file in the before_app_loads callback.
+vim config/init.rb
+a
 
 Merb::BootLoader.before_app_loads do
-  
-  Merb::Slices::config[:merb_ui][:option] = value
-  
+  Merb::Slices::config[:merb_ui][:owner] = 'Your Name' #Owner in the Copyright.
+  Merb::Slices::config[:merb_ui][:year] = 2000 #Year in the Copyright.
 end
 
-file: config/router.rb
+esc : wq
 
-# add the slice
+6.) Add to your router file.
+vim config/router.rb
+a
 
 slice(:merb_ui)
 
-# run the following rake task:
+esc : wq
 
-rake slices:merb_ui:install
+7.) Add to your application layout file.
+vim app/views/layout/application.html.erb
+a
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+  <head>
+    <title>Your Merb Application</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <%= mui_head %>
+  </head>
+  <body>
+    <%= mui_body do %>
+      <%= mui_bar(:tab_width => '6em') do %>
+        <%= mui_tab(:title => merb_words_title, :controller => 'merb_words/pages', :url => url(:merb_words_index)) %><%= mui_tab(:title => merb_photos_title, :controller => 'merb_photos/photos', :url => url(:merb_photos_index)) %><%= mui_tab(:title => 'Projects', :controller => 'projects', :url => url(:projects)) %>
+      <% end =%>
+    <% end =%>
+  </body>
+</html>
+
+esc : wq
+
 
 ------------------------------------------------------------------------------
 
-You can put your application-level overrides in:
+Advanced:
 
-host-app/slices/merb-ui/app - controllers, models, views ...
+# List all available tasks:
+rake -T slices:merb_ui
 
-Templates are located in this order:
+# Put your application-level overrides in:
+host-app/slices/merb-ui/
 
+# Templates are located in this order:
 1. host-app/slices/merb-ui/app/views/*
 2. gems/merb-ui/app/views/*
 3. host-app/app/views/*

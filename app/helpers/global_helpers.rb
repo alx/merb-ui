@@ -168,7 +168,7 @@ module Merb::GlobalHelpers
   def mui_head
     path = '/slices/merb-ui/javascripts/'
     require_css('master', 'mui')
-    require_js("jquery", "#{path}jquery_ui", "#{path}jquery_dimensions", "#{path}desktop", "/slices/merb-words/javascripts/password.js")
+    require_js('jquery', "#{path}ui", "#{path}dimensions", "#{path}keybinder", "#{path}desktop")
     include_required_css + include_required_js + catch_content(:feeds)
   end
   
