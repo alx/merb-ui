@@ -141,7 +141,7 @@ module Merb::GlobalHelpers
   end
   
   def mui_divider
-    tag(:hr, :class => 'mui_divider')
+    self_closing_tag(:hr, :class => 'mui_divider')
   end
 
   def mui_form(name, options = {}, &block)
@@ -242,7 +242,7 @@ module Merb::GlobalHelpers
     attributes[:style] = %{width:#{options[:width]};} if options[:width]
     attributes[:type] = :text
     attributes[:value] = params[:search]
-    box = mui_cell(:valign => 'middle'){tag(:input, attributes)}
+    box = mui_cell(:valign => 'middle'){self_closing_tag(:input, attributes)}
     button =  mui_cell(:align => 'right', :valign => 'middle', :wrap => false){%{#{mui_button(:submit => true, :title => 'Search')}}}
     table = mui_grid(:columns => 2){box + button}
     tag(:form, table, :action => options[:action])
