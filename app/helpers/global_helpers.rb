@@ -51,7 +51,7 @@ module Merb::GlobalHelpers
       copyright_years = %{#{copyright_then}-#{copyright_now}}
     end
     copyright_owner = %{ #{MerbUi[:owner]}} if MerbUi[:owner]
-    copyright_text = %{Copyright &copy; #{copyright_years}#{copyright_owner}. All Rights Reserved.}
+    copyright_text = %{Copyright &copy; #{copyright_years}#{copyright_owner}. All rights reserved.}
     copyright = tag(:div, copyright_text, :class => 'mui_copyright')
     output << tag(:div, catch_content(:for_layout) + copyright, attributes)
     output << tag(:div, :class => 'mui_window_target')
