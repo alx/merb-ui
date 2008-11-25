@@ -250,15 +250,29 @@ module Merb::GlobalHelpers
   
   def mui_tab(options = {}, &block)
     attributes = {}
+    if type = options[:type]
+      if type == 'merb_words'
+        controller = 'merb_words/pages'
+        title = options[:title] || MerbWords[:title] || 'Untitled'
+        attributes[:href] = options[:url] || url(:merb_words_index)
+      elsif type == 'merb_photos'
+        controller = 'merb_photos/photos'
+        title = options[:title] || MerbPhotos[:title] || 'Untitled'
+        attributes[:href] = options[:url] || url(:merb_photos_index)
+      end
+    else
+      controller = options[:controller] || 'application'
+      title = options[:title] || 'Untitled'
+      attributes[:href] = options[:url] || '/'
+    end
     attributes[:class] = 'mui_tab'
-    attributes[:class] << ' mui_selected' if options[:controller] == controller_name || options[:selected] == true
-    attributes[:href] = options[:url] if options[:url]
+    attributes[:class] << ' mui_selected' if controller == controller_name || options[:selected] == true
     if options[:width]
       attributes[:style] = %{width:#{options[:width]}}
     elsif @@mui_bar_tab_width
       attributes[:style] = %{width:#{@@mui_bar_tab_width}}
     end
-    tag(:a, options[:title], attributes)
+    tag(:a, title, attributes)
   end
 
   def mui_text(name, options = {})
