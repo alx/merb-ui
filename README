@@ -1,9 +1,7 @@
 Installation:
 
 1.) Install merb-ui gem.
-git clone git://github.com/uipoet/merb-ui.git
-cd merb-ui
-sudo rake install
+sudo gem install merb-ui
 
 2.) Navigate to your merb application.
 cd ~/your_merb_app/
@@ -52,7 +50,7 @@ a
   <body>
     <%= mui_body do %>
       <%= mui_bar(:tab_width => '6em') do %>
-        <%= mui_tab(:title => merb_words_title, :controller => 'merb_words/pages', :url => url(:merb_words_index)) %><%= mui_tab(:title => merb_photos_title, :controller => 'merb_photos/photos', :url => url(:merb_photos_index)) %><%= mui_tab(:title => 'Projects', :controller => 'projects', :url => url(:projects)) %>
+        <%= mui_tab(:type => 'merb_words') %><%= mui_tab(:type => 'merb_photos') %><%= mui_tab(:title => 'Projects', :controller => 'projects', :url => url(:projects)) %>
       <% end =%>
     <% end =%>
   </body>
