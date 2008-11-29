@@ -38,7 +38,7 @@ kbd {
 
 div.mui_bar {
   background-color: <%= color(0.1, 0.1, 0.1) %>;
-  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-image: url('<%= image_path('reflection.png') %>');
   background-position: center center;
   background-repeat: repeat-x;
   border-collapse: collapse;
@@ -56,7 +56,7 @@ span.mui_block {
   vertical-align: top;
 }
 div.mui_block_status {
-  background-image: url('/slices/merb-ui/images/transparency.png');
+  background-image: url('<%= image_path('transparency.png') %>');
   border-color: <%= color(0, 0, 0) %>;
   border-style: solid;
   border-width: 1px;
@@ -89,7 +89,7 @@ div.mui_block_tray *.mui_block {
 /* button */
 
 *.mui_button {
-  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-image: url('<%= image_path('reflection.png') %>');
   background-position: center center;
   background-repeat: repeat-x;
   border-style: solid;
@@ -351,7 +351,7 @@ select.mui_menu {
 /* message */
 
 div.mui_message {
-  background-image: url('/slices/merb-ui/images/transparency.png');
+  background-image: url('<%= image_path('transparency.png') %>');
   border-style: solid;
   border-bottom-width: 1px;
   border-left-width: 1px;
@@ -402,7 +402,7 @@ blockquote.mui_quote {
 
 a.mui_tab {
   background-color: <%= color(0.1, 0.1, 0.1) %>;
-  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-image: url('<%= image_path('reflection.png') %>');
   background-position: center center;
   background-repeat: repeat-x;
   border-bottom: none;
@@ -451,23 +451,21 @@ table.mui_window {
 }
 table.mui_window_bar {
   background-color: <%= color(0.1, 0.1, 0.1) %>;
-  background-image: url('/slices/merb-ui/images/reflection.png');
+  background-image: url('<%= image_path('reflection.png') %>');
   background-position: center center;
   background-repeat: repeat-x;
   color: <%= color(1, 1, 1) %>;
   height: 2em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   width: 100%;
   <%= border_radius(:edge => 'top') %>
 }
 td.mui_window_bar_end {
-  padding-right: 0.75em;
   text-align: right;
 }
-td.mui_window_title {
-  padding-left: 0.75em;
-}
 td.mui_window_content {
-  background-image: url('/slices/merb-ui/images/transparency.png');
+  background-image: url('<%= image_path('transparency.png') %>');
   color: <%= color(1, 1, 1) %>;
   padding: 0.5em;
   <%= border_radius(:edge => 'bottom') %>
