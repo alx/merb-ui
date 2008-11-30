@@ -15,16 +15,18 @@ b, em, h1, label, strong {
   font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
   font-weight: bold;
 }
-code, em {
+code, code em, pre {
   font-family: "Bitstream Vera Sans Mono", "Monaco", "Andale Mono", "Courier New", "Courier", fixed;
   font-style: normal;
   font-weight: normal;
+}
+code, pre {
+  font-size: 0.85em;
 }
 code {
   background-color: <%= color(0.1, 0.1, 0.1) %>;
   color: <%= color(1, 1, 1) %>;
   display: block;
-  font-size: 0.85em;
   overflow: auto;
   padding: 1em;
   white-space: pre;
