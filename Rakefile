@@ -8,7 +8,7 @@ AUTHOR = 'uipoet'
 EMAIL = 'dont.tase@me.com'
 HOMEPAGE = 'http://uipoet.com/projects'
 SUMMARY = 'User Interface Components for Merb'
-GEM_VERSION = '0.2'
+GEM_VERSION = '0.2.1'
 
 spec = Gem::Specification.new do |s|
   s.rubyforge_project = AUTHOR

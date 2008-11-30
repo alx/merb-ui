@@ -21,7 +21,7 @@ function windowOpen(url){
   target.load(url, function(){
     if(windowStatus == 0){
       target.fadeIn();
-  	}
+    }
     $('.mui_focus:first').focus();
     windowStatus = 1;
 	});

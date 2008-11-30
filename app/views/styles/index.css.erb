@@ -15,15 +15,22 @@ b, em, h1, label, strong {
   font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif;
   font-weight: bold;
 }
+code, em {
+  font-family: "Bitstream Vera Sans Mono", "Monaco", "Andale Mono", "Courier New", "Courier", fixed;
+  font-style: normal;
+  font-weight: normal;
+}
 code {
   background-color: <%= color(0.1, 0.1, 0.1) %>;
   color: <%= color(1, 1, 1) %>;
   display: block;
-  font-family: "Bitstream Vera Sans Mono", "Monaco", "Andale Mono", "Courier New", "Courier", fixed;
   font-size: 0.85em;
   overflow: auto;
   padding: 1em;
-  white-space: nowrap;
+  white-space: pre;
+}
+code em {
+  color: <%= color(0, 1, 0) %>;
 }
 kbd {
   background-color: <%= color(0.9, 0.9, 0.9) %>;
