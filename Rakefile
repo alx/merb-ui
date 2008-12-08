@@ -6,11 +6,15 @@ require 'merb-core/tasks/merb'
 spec = Gem::Specification.new do |s|
   s.add_dependency('merb-helpers', '~> 1.0.0')
   s.add_dependency('merb-slices', '~> 1.0.0')
+  s.author = 'UiPoet'
+  s.email = 'dont.tase@me.com'
   s.files = FileList['app/**/*', 'lib/**/*', 'public/**/*', '[A-Z]*'].to_a
+  s.has_rdoc = true
+  s.homepage = 'http://uipoet.com'
   s.name = 'merb-ui'
   s.rubyforge_project = 'uipoet'
   s.summary = 'User Interface Components for Merb'
-  s.version = '0.3'
+  s.version = '0.3.1'
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|
