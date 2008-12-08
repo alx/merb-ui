@@ -1,5 +1,7 @@
 require 'rubygems'
-require 'rake'
+require 'rake/gempackagetask'
+require 'merb-core'
+require 'merb-core/tasks/merb'
 
 spec = Gem::Specification.new do |s|
   s.add_dependency('merb-helpers', '~> 1.0.0')
