@@ -32,7 +32,7 @@ esc : wq
 vim config/router.rb
 a
 
-slice(:merb_ui)
+slice :merb_ui
 
 esc : wq
 

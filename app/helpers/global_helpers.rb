@@ -1,5 +1,5 @@
 module Merb::GlobalHelpers
-  
+      
   def mui_bar(options = {}, &block)
     @@mui_bar_tab_width = options[:tab_width] if options[:tab_width]
     tag(:div, capture(&block), :class => 'mui_bar')
@@ -166,10 +166,11 @@ module Merb::GlobalHelpers
   end
   
   def mui_head
-    path = '/slices/merb-ui/javascripts/'
+    jquery = tag(:script, '', :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.2/jquery.min.js', :type => 'text/javascript')
+    jquery_ui = tag(:script, '', :src => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.5/jquery-ui.min.js', :type => 'text/javascript')
     require_css('master', 'mui')
-    require_js('jquery', "#{path}ui", "#{path}dimensions", "#{path}keybinder", "#{path}desktop")
-    include_required_css + include_required_js + catch_content(:feeds)
+    require_js("#{mui_path :javascript}/dimensions", "#{mui_path :javascript}/keybinder", "#{mui_path :javascript}/main")
+    jquery + jquery_ui + include_required_js + include_required_css + catch_content(:feeds)
   end
   
   def mui_hyper_text(name, options = {})
@@ -187,7 +188,7 @@ module Merb::GlobalHelpers
     attributes[:class] << ' mui_image_border' if options[:border] == true
     if options[:height] && options[:width]
       attributes[:class] << ' mui_image_rounded' if options[:rounded] == true
-      attributes[:src] = '/slices/merb-ui/images/nil.png'
+      attributes[:src] = "#{mui_path :image}/nil.png"
       attributes[:style] = %{background-image: url('#{options[:url]}');}
       attributes[:style] << %{height: #{options[:height]}px;}
       attributes[:style] << %{width: #{options[:width]}px;}
@@ -233,6 +234,10 @@ module Merb::GlobalHelpers
     attributes[:class] << ' mui_focus' if options[:focus] == true
     attributes[:label] = options[:title]
     password_field(name, attributes)
+  end
+  
+  def mui_path(type)
+    ::MerbUi.public_path_for type
   end
   
   def mui_search(options = {})
@@ -295,7 +300,7 @@ module Merb::GlobalHelpers
   end
   
   def mui_window(options = {}, &block)
-    script = js_include_tag '/slices/merb-ui/javascripts/window'
+    script = js_include_tag("#{mui_path :javascript}/window")
     bar_content = ''
     bar_content << tag(:td, options[:buttons], :class => 'mui_bar_buttons') if options[:buttons]
     bar_content << tag(:td, options[:title], :class => 'mui_window_title') if options[:title]
